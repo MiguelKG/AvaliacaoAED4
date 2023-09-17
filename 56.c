@@ -80,29 +80,13 @@ int** merge( int** intervals, int intervalsSize, int *intervalsColSize, int* ret
                 pElem[ 0 ] = -1;
                 toggle = 1;
             } else
-            if ( elem[ 0 ] >= pElem[ 0 ] && elem[ 1 ] <= pElem[ 1 ] ) {
-                elem[ 0 ] = pElem[ 0 ];
-                elem[ 1 ] = pElem[ 1 ];
-                pElem[ 0 ] = -1;
-                toggle = 1;
-            } else
             if ( pElem[ 1 ] >= elem[ 0 ] && pElem[ 1 ] <= elem[ 1 ] ) {
                 elem[ 0 ] = pElem[ 0 ];
                 pElem[ 0 ] = -1;
                 toggle = 1;
             } else
-            if ( elem[ 1 ] >= pElem[ 0 ] && elem[ 1 ] <= pElem[ 1 ] ) {
-                elem[ 1 ] = pElem[ 1 ]; 
-                pElem[ 0 ] = -1;
-                toggle = 1;
-            } else
             if ( pElem[ 0 ] <= elem[ 1 ] && pElem[ 0 ] >= elem[ 0 ] ) {
                 elem[ 1 ] = pElem[ 1 ];
-                pElem[ 0 ] = -1;
-                toggle = 1;
-            } else
-            if ( elem[ 0 ] <= pElem[ 1 ] && elem[ 0 ] >= pElem[ 0 ] ) {
-                elem[ 0 ] = pElem[ 0 ];
                 pElem[ 0 ] = -1;
                 toggle = 1;
             }
