@@ -28,8 +28,16 @@ int main () {
         for ( int i2 = 0; i2 < 2; i2++ ) {
             printf( "%d ", result[ i ][ i2 ] );
         }
+        free( result[ i ] );
         printf( "\n" );
     }
+    free( result );
+    free( returnColumnSizes );
+
+    for ( int i = 0; i < SIZE; i++ ) {
+        free( entry[ i ] );
+    }
+    free( entry );
 }
 
 /*
